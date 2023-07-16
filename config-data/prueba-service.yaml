@@ -1,11 +1,11 @@
 server:
-  port: 8082
+  port: 8083
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://eureka-service.default.svc.cluster.local:8761/eureka/
+      default-zone: http://eureka-service.default.svc.cluster.local:8761/eureka/
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:8082}
-    hostname: proveedor-service
+    instance-id: ${spring.application.name}:${spring.application.instance_id:8083}
+    hostname: prueba-service

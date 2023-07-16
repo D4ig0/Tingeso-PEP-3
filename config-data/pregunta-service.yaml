@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8082
 eureka:
   client:
     fetch-registry: true
@@ -7,5 +7,5 @@ eureka:
     service-url:
       default-zone: http://eureka-service.default.svc.cluster.local:8761/eureka/
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:8083}
-    hostname: acopio-service
+    instance-id: ${spring.application.name}:${spring.application.instance_id:8082}
+    hostname: pregunta-service
