@@ -5,9 +5,3 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://eureka-client:8761/eureka/
