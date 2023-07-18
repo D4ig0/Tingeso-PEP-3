@@ -25,6 +25,10 @@ public class PreguntaController {
                                             @RequestParam("enunciado") String enunciado) {
         preguntaService.guardarPregunta(codigo, dificultad, respuesta, enunciado);
         return ResponseEntity.ok().build();}
+
+    @GetMapping("/obtenerPreguntasDificultad/{dificultad}")
+    public ResponseEntity<?> obtenerPreguntasDificultad(@PathVariable("dificultad") String dificultad) {
+        return ResponseEntity.ok(preguntaService.obtenerPreguntasPorDificultad(dificultad));}
     @GetMapping("/obtenerEnunciado/{id}")
     public ResponseEntity<String> obtenerEnunciado(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(preguntaService.obtenerEnunciado(id));}
@@ -38,10 +42,5 @@ public class PreguntaController {
     @GetMapping("/obtenerRespuesta/{id}")
     public ResponseEntity<String> obtenerRespuesta(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(preguntaService.obtenerRespuesta(id));}
-
-    @GetMapping("/obtenerPreguntasDificultad/{dificultad}")
-    public ResponseEntity<?> obtenerPreguntasDificultad(@PathVariable("dificultad") String dificultad) {
-        return ResponseEntity.ok(preguntaService.obtenerPreguntasPorDificultad(dificultad));}
-
 
 }

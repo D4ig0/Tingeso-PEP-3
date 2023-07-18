@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -33,15 +34,46 @@ public class PreguntaService {
             e.printStackTrace();
         }
     }
+
+// quizas la deba modificar
+
     public List<PreguntaEntity> obtenerPreguntasPorDificultad(String dificultad) {
         List<PreguntaEntity> preguntasPorDificultad = new ArrayList<>();
+        // Obtener índices aleatorios para las preguntas
+        List<PreguntaEntity> preguntasSeleccionadas = new ArrayList<>();
 
         for (PreguntaEntity pregunta : preguntaRepository.findAll()) {
             if (pregunta.getDificultad().equals(dificultad)) {
                 preguntasPorDificultad.add(pregunta);
             }
         }
-        return preguntasPorDificultad;
+        List<Integer> indicesAleatorios = generarIndicesAleatorios(preguntasPorDificultad.size());
+
+        // Verificar si hay suficientes preguntas
+        if (preguntasPorDificultad.size() < 4) {
+
+            for (int i = 0; i < preguntasPorDificultad.size(); i++) {
+                int indice = indicesAleatorios.get(i);
+                preguntasSeleccionadas.add(preguntasPorDificultad.get(indice));
+            }
+        }
+
+
+        //caso ideal
+        for (int i = 0; i < 4; i++) {
+            int indice = indicesAleatorios.get(i);
+            preguntasSeleccionadas.add(preguntasPorDificultad.get(indice));
+        }
+        return preguntasSeleccionadas;
+    }
+
+    private List<Integer> generarIndicesAleatorios(int max) {
+        List<Integer> indices = new ArrayList<>();
+        for (int i = 0; i < max; i++) {
+            indices.add(i);
+        }
+        Collections.shuffle(indices);
+        return indices;
     }
 
     public String obtenerEnunciado(Integer id){
