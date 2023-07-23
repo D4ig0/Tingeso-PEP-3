@@ -1,7 +1,9 @@
 .format{
-    position: fixed;
+    position: sticky;
+    z-index: 1000;
     display: flex;
     top: 0;
+    
     width: 100%;
     height: 70px;
     background-color: #111;

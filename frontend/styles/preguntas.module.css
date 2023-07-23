@@ -1,69 +1,58 @@
 
-
 .container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  min-width: 50rem;
+  padding: 1rem;
+  border: 1px solid ;
+  border-radius: 1rem;
+  background:  rgba(118,125,134,255);
+  color: rgba(253,253,253,255);
+  display: grid;
+  font-size: 1.2rem;
+  
+  
 }
 
 .question {
-  font-size: 18px;
+  justify-self: center;
   font-weight: bold;
-  margin-bottom: 10px;
-}
 
-.codeContainer {
-  margin-bottom: 20px;
 }
-
-.react-syntax-highlighter-line-number {
-  display: inline-block;
-  padding-right: 15px;
-  color: #999;
+.apartadoPreguntas
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-.react-syntax-highlighter-line-number:before {
-  content: attr(data-index);
-}
-
-.react-syntax-highlighter-line {
-  display: block;
-}
-
-.react-syntax-highlighter-line.react-syntax-highlighter-line-highlighted {
-  background-color: #3b3b3b;
-}
-
-/* Styling for the input */
-.text-input {
-  padding: 5px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-/* Styling for the button */
-.confirm-button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.confirm-button:hover {
-  background-color: #0056b3;
+.etiqueta{
+  font-weight: bold;
+  padding-right: 1rem;
 }
 
 .correcto {
-  color: green;
+  color: rgb(52, 179, 52);
 }
 .incorrecto {
-  color: red;
+  color: rgb(184, 44, 44);
+}
+
+.inputRespuesta{
+  width: 200px;
+  padding: 0.5rem;
+  width: 16rem;
+  align-items: right;
+  border: 1px solid #1020ac;
+  border-radius: 0.2rem;
+  background-color: #ffffff;
+
+}
+
+.resultado{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid ;
+  border-radius: 1rem;
+  font-weight: bold;
+  display: grid;
 }
 

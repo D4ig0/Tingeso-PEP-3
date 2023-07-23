@@ -11,8 +11,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/preguntas")
+@CrossOrigin
 public class PreguntaController {
 
+    
     @Autowired
     private PreguntaService preguntaService;
     @GetMapping

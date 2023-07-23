@@ -38,6 +38,7 @@ function Cronometro({debeDetenerse, setTiempoCronometro}) {
       const tiempoFinal = { horas, minutos, segundos };
       setTiempoCronometro(tiempoFinal);
       localStorage.setItem('tiempoCronometro', JSON.stringify(tiempoFinal)); 
+      localStorage.setItem('tiempoGuardado', JSON.stringify(tiempoFinal)); 
     }
   }, [debeDetenerse, cronometroID, horas, minutos, segundos]);
 
@@ -47,7 +48,9 @@ function Cronometro({debeDetenerse, setTiempoCronometro}) {
 
   return (
     <div className={styles.cronometro}>
+      <div className={styles.titulo}>Tiempo transcurrido</div>
       <div>{`${formatoTiempo(horas)}:${formatoTiempo(minutos)}:${formatoTiempo(segundos)}`}</div>
+      
     </div>
   );
 }

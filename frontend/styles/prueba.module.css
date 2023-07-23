@@ -1,37 +1,95 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    gap: 2rem;
+    min-width: 15rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,18,32,255);
+
+}
   
-  .main {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
+
+  .volver {
+    position: fixed;
+    top: 70%;
+    left: 10%;
+    
+    color: white;
+    border-radius: 5px;
+    height: 4rem;
+    font-size: 1.2rem;
+    width: 12rem;
   }
   
   .title {
-    font-size: 24px;
+    position:sticky; 
+    justify-self: center;
+    color: #fff;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 10px;
   }
   
-  .paragraph {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  .volver {
+    display: grid;
+    gap: 1rem;
   }
-  
-  .link {
-    display: block;
-    font-size: 20px;
+
+  .volver button {
+    background-color: #1e5ea7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 4rem;
+    font-size: 1.5rem;
+    min-width: 15rem;
+    cursor:grab;
+  }
+  .resultado{
+    display: flex;
+    border-radius: 8px;
+    min-width: 15rem;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid ;
     font-weight: bold;
-    color: #0070f3;
-    text-decoration: none;
-    margin-top: 10px;
   }
-  
-  .link:hover {
-    color: #0053ad;
-  }
-  
+
+
+  .informacion {
+    position: fixed;
+    top: 40%;
+    left: 80%;
+    max-width: 12rem;
+    color: white;
+    border-radius: 5px;
+    border-color: #000;
+    height: 4rem;
+    font-size: 1.2rem;
+    width: 12rem;
+    
+}
+
+.informacion button {
+    background-color: #1e5ea7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 4rem;
+    font-size: 1.5rem;
+    min-width: 15rem;
+    cursor:grab;
+}
+
+
+.breadcrumb {
+  font-size: 1rem;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.breadcrumb a:hover {
+  color: #0070f3;
+  text-decoration: none;
+}

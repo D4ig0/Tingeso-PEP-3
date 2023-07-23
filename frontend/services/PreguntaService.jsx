@@ -3,6 +3,11 @@ import axios from 'axios';
 const url = 'http://localhost:8082/preguntas';
 
 class PreguntaService {
+
+  preguntasTotales(){
+    return axios.get(url);
+  }
+
   obtenerPreguntas(dificultad) {
     return axios.get(`${url}/obtenerPreguntasDificultad/${dificultad}`);
   }

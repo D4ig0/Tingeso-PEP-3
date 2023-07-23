@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../styles/subirPreguntas.module.css';
+import styles from '../../styles/agregarPreguntas.module.css';
 import PreguntaService from "/services/PreguntaService";
 
 const SubirPreguntas = () => {
@@ -15,61 +15,63 @@ const SubirPreguntas = () => {
     }
 
     const nombreArchivo = codigo?.name;
-    
+
     if (nombreArchivo && nombreArchivo.split('.').pop() !== 'py') {
       window.alert('Solo se aceptan archivos .py');
       return;
     }
-    console.log('Nombre del archivo:', nombreArchivo);
-    console.log('Dificultad:', dificultad);
-    console.log('Respuesta:', respuesta);
-    console.log('Enunciado:', enunciado);
-    console.log('Archivo:', codigo);
 
     PreguntaService.subirPregunta(codigo, dificultad, respuesta, enunciado)
-    .then((response) => {
-      console.log('Pregunta subida exitosamente:', response.data);
-      window.alert('Pregunta subida exitosamente');
-    })
-    .catch((error) => {
-      console.error('Error al subir pregunta:', error);
-      window.alert('Error al subir pregunta');
-    });
+      .then((response) => {
+        console.log('Pregunta subida exitosamente:', response.data);
+        window.alert('Pregunta subida exitosamente');
+      })
+      .catch((error) => {
+        console.error('Error al subir pregunta:', error);
+        window.alert('Error al subir pregunta');
+      });
 
 
-   
+
   };
-  
+
   return (
     <div className={styles.container}>
-      <br />
-      Selecciona tu archivo.
-      <p className={styles.comentario}>Deberás ingresar tu archivo, seleccionar la dificultad de este e ingresar la respuesta asociada a este problema.</p>
-      <div className={styles.comentario}>Solo se aceptan archivos .py</div>
-      <div className={styles.flexboxContainer}>
-        <div className={styles.cajita}>
-          <label className={styles.comentario2}>Dificultad:</label>
-          <select value={dificultad} onChange={(e) => setDificultad(e.target.value)}>
-            <option value="">Seleccione una dificultad</option>
-            <option value="basica">Básica </option>
-            <option value="intermedia">Intermedia </option>
-            <option value="avanzada">Avanzada </option>
-          </select>
+      <div className={styles.formulario}>
+        <div className={styles.titulo}>
+          Crea tu pregunta
         </div>
-        <div className={styles.inputFile}>
-          <input type="file" onChange={(e) => setCodigo(e.target.files[0])} />
-          {codigo?.name}
+        <p className={styles.comentario}>Deberás ingresar tu archivo, seleccionar la dificultad de este e ingresar la respuesta asociada a este problema.</p>
+
+        <div className={styles.flexboxContainer}>
+          <div className={styles.dificultad}>
+            <label className={styles.comentario2}>Escoge la dificultad:</label>
+            <select value={dificultad} onChange={(e) => setDificultad(e.target.value)}>
+              <option value="" disabled hidden>Selecciona la dificultad</option>
+              <option value="basica">Básica</option>
+              <option value="intermedia">Intermedia</option>
+              <option value="avanzada">Avanzada</option>
+            </select>
+          </div>
+          
+          <div className={styles.inputFile}>
+            <label >Ingresa tu archivo</label>
+            <input type="file" onChange={(e) => setCodigo(e.target.files[0])} />
+          </div>
+
+          <div className={styles.ingresa}>
+          <label >Ingresa el enunciado que tendrá tu pregunta</label>
+            <input className={styles.respuesta} type="text" placeholder="Enunciado" onChange={(e) => setEnunciado(e.target.value)} />
+          </div>
         </div>
-        <div>
-          <input className={styles.respuesta} type="text" placeholder="Respuesta" onChange={(e) => setRespuesta(e.target.value)} />
-        </div>
-        <div>
-          <input className={styles.respuesta} type="text" placeholder="Enunciado" onChange={(e) => setEnunciado(e.target.value)} />
-        </div>
+        <div className={styles.ingresa}>
+          <label >Ingresa la respuesta de tu pregunta de python</label>
+            <input className={styles.respuesta} type="text" placeholder="Respuesta" onChange={(e) => setRespuesta(e.target.value)} />
+          </div>
+        <button type="button" className={styles.animatedButton} onClick={onClickHandler}>
+          Crear Pregunta
+        </button>
       </div>
-      <button type="button" className={styles.animatedButton} onClick={onClickHandler}>
-        Crear Pregunta
-      </button>
     </div>
   );
 };

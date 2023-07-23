@@ -4,7 +4,6 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import styles from "../styles/preguntas.module.css";
 
 const Pregunta = ({ pregunta, codigo, respuesta, respuestaUsuario, setRespuestaUsuario, verificarRespuestas }) => {
-  const [mostrarRespuesta, setMostrarRespuesta] = useState(false);
   const [esCorrecta, setEsCorrecta] = useState(false);
 
   const handleEsCorrecta = () => {
@@ -28,12 +27,10 @@ const Pregunta = ({ pregunta, codigo, respuesta, respuestaUsuario, setRespuestaU
         </SyntaxHighlighter>
       </div>
       {!verificarRespuestas && (
-        <div>
-          <input
-            type="text"
-            value={respuestaUsuario}
-            onChange={(e) => setRespuestaUsuario(e.target.value)}
-          />
+        <div className={styles.apartadoPreguntas}>
+          <label className= {styles.etiqueta}> Ingrese su respuesta: </label>
+          <input className={styles.inputRespuesta} placeholder="Respuesta" type="text" value={respuestaUsuario} onChange={(e) => setRespuestaUsuario(e.target.value)} />
+  
         </div>
       )}
       {verificarRespuestas && (
@@ -41,7 +38,7 @@ const Pregunta = ({ pregunta, codigo, respuesta, respuestaUsuario, setRespuestaU
           <p>Tu respuesta: {respuestaUsuario}</p>
           <div>
             <p className={esCorrecta ? styles.correcto : styles.incorrecto}>
-              {esCorrecta ? "¡Correcto!" : <>Respuesta incorrecta.<br />La respuesta correcta es: {respuesta}</>}
+              {esCorrecta ? "¡La respuesta es correcta!" : <>Respuesta incorrecta.<br />La respuesta correcta es: {respuesta}</>}
             </p>
           </div>
         </div>

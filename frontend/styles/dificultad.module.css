@@ -1,12 +1,16 @@
 .container {
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 0 0.5rem;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     user-select: none;
-  }
+    background-color: #000000;
+    color : #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg id='visual' viewBox='0 0 1920 1080' width='1920' height='1080' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'%3E%3Crect x='0' y='0' width='1920' height='1080' fill='%23001220'%3E%3C/rect%3E%3Cdefs%3E%3ClinearGradient id='grad1_0' x1='43.8%25' y1='100%25' x2='100%25' y2='0'%3E%3Cstop offset='14.444444444444446%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3Cstop offset='85.55555555555554%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cdefs%3E%3ClinearGradient id='grad1_1' x1='43.8%25' y1='100%25' x2='100%25' y2='0'%3E%3Cstop offset='14.444444444444446%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3Cstop offset='85.55555555555554%25' stop-color='%23001220' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cdefs%3E%3ClinearGradient id='grad2_0' x1='0%25' y1='100%25' x2='56.3%25' y2='0'%3E%3Cstop offset='14.444444444444446%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3Cstop offset='85.55555555555554%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cdefs%3E%3ClinearGradient id='grad2_1' x1='0%25' y1='100%25' x2='56.3%25' y2='0'%3E%3Cstop offset='14.444444444444446%25' stop-color='%23001220' stop-opacity='1'%3E%3C/stop%3E%3Cstop offset='85.55555555555554%25' stop-color='%23fdfdfd' stop-opacity='1'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cg transform='translate(1920, 1080)'%3E%3Cpath d='M-540 0C-528.6 -55.2 -517.1 -110.4 -501.2 -162.9C-485.3 -215.3 -464.9 -265 -436.1 -316.8C-407.2 -368.6 -369.9 -422.5 -317.4 -436.9C-264.9 -451.2 -197.3 -425.9 -141.8 -436.5C-86.4 -447.1 -43.2 -493.6 0 -540L0 0Z' fill='%23767d86'%3E%3C/path%3E%3Cpath d='M-270 0C-264.3 -27.6 -258.6 -55.2 -250.6 -81.4C-242.6 -107.7 -232.5 -132.5 -218 -158.4C-203.6 -184.3 -184.9 -211.3 -158.7 -218.4C-132.5 -225.6 -98.6 -213 -70.9 -218.3C-43.2 -223.6 -21.6 -246.8 0 -270L0 0Z' fill='%23fdfdfd'%3E%3C/path%3E%3C/g%3E%3Cg transform='translate(0, 0)'%3E%3Cpath d='M540 0C533.4 55.8 526.8 111.5 511.7 166.3C496.6 221 473 274.7 436.9 317.4C400.7 360.1 352 391.6 303.9 418.3C255.8 444.9 208.4 466.5 157.9 486C107.4 505.5 53.7 522.7 0 540L0 0Z' fill='%23767d86'%3E%3C/path%3E%3Cpath d='M270 0C266.7 27.9 263.4 55.8 255.8 83.1C248.3 110.5 236.5 137.4 218.4 158.7C200.4 180 176 195.8 151.9 209.1C127.9 222.4 104.2 233.3 79 243C53.7 252.7 26.8 261.4 0 270L0 0Z' fill='%23fdfdfd'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
   
   .main {
     padding: 5rem 0;
@@ -35,32 +39,30 @@
   .filterCard {
     border: 2px solid black;
     margin: 10px;
-
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 100;
-    height: 100%;
     cursor: pointer;
-    border: 1px solid #eaeaea;
+    border: 1px solid #9e9e9c;
     border-radius: 8px;
     padding: 16px;
-    width: 200px;
-    height: 230px;}
- 
+    width: 14rem;
+    transition: 0.5s; /* Agregamos transición a todos los cambios de estilo */
+}
 
-.filterCard:hover{
-  border: 1px solid #16B7D5;
-  background-color: #ACACAC;
-  transition: 0.5s;
-} 
+.filterCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    background-color: #ACACAC;
+}
+
   
   .titleContainer {
     display: flex;
     height: 20%;
     justify-content: center;
   border-bottom: 1px solid black;
-    background-color: #FBD344;
+  background: #3474A3;
     align-items: center;  
   }
 
@@ -69,11 +71,12 @@
   flex-direction: column;
   text-align: center;
     padding: 10%;
+    color: #ffffff;
    }
   
   .content p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   
   .preguntaList {

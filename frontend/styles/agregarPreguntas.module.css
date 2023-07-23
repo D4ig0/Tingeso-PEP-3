@@ -1,0 +1,130 @@
+/* agregarPreguntas.module.css */
+
+.container{
+  background-color: rgba(0,18,32,255);
+    color: #fff;
+    min-height: 90vh;
+    font-size: 2rem;
+    
+}
+
+.flexboxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titulo
+{
+  font-size: 2rem;
+  
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.dificultad {
+  
+  display: flex;
+  align-items: center;
+  gap: 11rem;
+  color: #fff;
+  border: 2px solid #f9f9f9;
+  padding: 10px; 
+  font-size: 1.2rem;
+  color: #f9f9f9;
+  border-radius: 10px;
+  
+}
+/* Estilos para el select */
+.dificultad select {
+  background-color:rgba(0,18,32,255);
+  font-size: 1rem;
+  color: #fdfcfc;
+  cursor: pointer;
+}
+
+
+
+
+/* Estilos para cambiar la apariencia del select cuando está enfocado */
+.dificultad select:focus {
+  border-color: #1e5ea7;
+  box-shadow: 0 0 3px rgba(37, 40, 43, 0.5);
+}
+
+.formulario {
+  gap: 2rem ;
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+
+  padding: 20px;
+  
+  
+    color: #fff;
+  
+}
+.comentario {
+  font-size: 1.2rem;
+  color: #f9f9f9;
+
+}
+
+
+
+.inputFile {
+
+  
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  gap: 2.6rem;
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid #f9f9f9;
+}
+
+
+
+.inputFile label {
+  
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.respuesta {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.animatedButton {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.animatedButton:hover {
+  background-color: #0056b3;
+}
+.ingresa {
+  font-size: 1.2rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px; /* Añadimos un espacio vertical de 10px entre la etiqueta y el input */
+}

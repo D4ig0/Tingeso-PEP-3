@@ -11,6 +11,9 @@ const Prueba = () => {
   const [preguntasEjemplo, setPreguntasEjemplo] = useState([]);
   const [verificarRespuestas, setVerificarRespuestas] = useState(false);
   const [tiempoCronometro, setTiempoCronometro] = useState(null);
+  const[verificador, setVerificador] = useState(false);
+  const tiempoGuardado = localStorage.getItem("tiempoCronometro");
+
 
   useEffect(() => {
     const storedDificultad = localStorage.getItem("dificultad");
@@ -35,9 +38,9 @@ const Prueba = () => {
     let puntajeTotal = 0;
     preguntasEjemplo.forEach((pregunta) => {
       if (pregunta.respuestaUsuario === pregunta.respuesta) {
-        puntajeTotal += 70; // Suma 70 puntos por respuesta correcta
+        puntajeTotal += 7; 
       } else {
-        puntajeTotal += 10; // Suma 10 puntos por respuesta incorrecta
+        puntajeTotal += 1; 
       }
     });
     return puntajeTotal;
@@ -51,6 +54,7 @@ const Prueba = () => {
 
   const handleVerificarRespuestas = () => {
     setVerificarRespuestas(true);
+    setVerificador(true);
     localStorage.setItem('tiempoCronometro', JSON.stringify(tiempoCronometro));
   }
 
@@ -61,9 +65,43 @@ const Prueba = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Cronometro debeDetenerse={verificarRespuestas} setTiempoCronometro={setTiempoCronometro} />
+      <nav className={styles.breadcrumb}>
+        <Link href="/">INICIO</Link> &gt;
+        <Link href="/dificultad">DIFICULTAD</Link>
+         &gt; PRUEBA
+      </nav>
 
-      <div className={styles.main}>
+    <div className={styles.volver}>
+      
+    <button>
+          <Link href="/dificultad">Volver a dificultades</Link>
+        </button>
+        <button>
+          <Link href="/">Volver al inicio</Link>
+        </button>
+      </div>
+
+      
+      <div className={styles.informacion}>
+
+      <Cronometro debeDetenerse={verificarRespuestas} setTiempoCronometro={setTiempoCronometro} />
+  {verificador ? (
+    <div className={styles.resultado}>
+      <p>Puntaje total: {calcularPuntaje()}</p>
+      <p>Nota Final: {calcularPuntajePromedio()}</p>
+    </div>
+  ) : (
+    <>
+      {/* Mantenemos el cronómetro siempre montado, pero lo mostramos u ocultamos según la condición */}
+        
+      <button className={styles.button} onClick={handleVerificarRespuestas}>Verificar respuestas</button>
+    </>
+  )}
+</div>
+
+
+      
+
         <p className={styles.title}>Prueba de dificultad {dificultad}</p>
 
         {preguntasEjemplo.map((pregunta, index) => (
@@ -82,24 +120,11 @@ const Prueba = () => {
           />
         ))}
 
-        <button onClick={handleVerificarRespuestas}>Verificar respuestas</button>
 
-        {verificarRespuestas && (
-          <div className={styles.resultado}>
-            <p>Puntaje total: {calcularPuntaje()}</p>
-            <p>Puntaje promedio: {calcularPuntajePromedio()}</p>
-          </div>
-        )}
-      </div>
 
-      <div className={styles.footer}>
-        <button>
-          <Link href="/dificultad">Volver a dificultad</Link>
-        </button>
-        <button>
-          <Link href="/">Volver al inicio</Link>
-        </button>
-      </div>
+
+ 
+
     </div>
   );
 };
