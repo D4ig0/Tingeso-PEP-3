@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public interface PreguntaRepository extends JpaRepository<PreguntaEntity, Integer>  {
@@ -17,6 +18,11 @@ public interface PreguntaRepository extends JpaRepository<PreguntaEntity, Intege
 
     @Query("select a from PreguntaEntity a where a.id_pregunta = :id")
     PreguntaEntity obtenerPregunta(@Param("id") Integer id);
+
+    @Query("select a from PreguntaEntity a where a.dificultad = :dificultad")
+    List<PreguntaEntity> obtenerPorDificultad(@Param("dificultad") String dificultad);
+
+
 
 
 }

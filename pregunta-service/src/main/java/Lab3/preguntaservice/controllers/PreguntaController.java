@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 @Controller
@@ -19,15 +21,17 @@ public class PreguntaController {
         return ResponseEntity.ok(preguntas);}
 
     @PostMapping
-    public ResponseEntity<?> nuevaPregunta(@RequestParam("codigo") String codigo,
+    public ResponseEntity<PreguntaEntity> nuevaPregunta(@RequestParam("codigo") MultipartFile codigo,
                                            @RequestParam("dificultad") String dificultad,
                                            @RequestParam("respuesta") String respuesta,
                                             @RequestParam("enunciado") String enunciado) {
+        System.out.println("HOLA TOY PROBANDO PE CAISA");
         preguntaService.guardarPregunta(codigo, dificultad, respuesta, enunciado);
         return ResponseEntity.ok().build();}
 
+
     @GetMapping("/obtenerPreguntasDificultad/{dificultad}")
-    public ResponseEntity<?> obtenerPreguntasDificultad(@PathVariable("dificultad") String dificultad) {
+    public ResponseEntity<List<PreguntaEntity>> obtenerPreguntasDificultad(@PathVariable("dificultad") String dificultad) {
         return ResponseEntity.ok(preguntaService.obtenerPreguntasPorDificultad(dificultad));}
     @GetMapping("/obtenerEnunciado/{id}")
     public ResponseEntity<String> obtenerEnunciado(@PathVariable("id") Integer id) {

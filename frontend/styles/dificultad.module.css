@@ -1,0 +1,131 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+  
+  .main {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    margin:  10px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: 350px;
+  }
+  
+  .filterCard {
+    border: 2px solid black;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    height: 230px;}
+ 
+
+.filterCard:hover{
+  border: 1px solid #16B7D5;
+  background-color: #ACACAC;
+  transition: 0.5s;
+} 
+  
+  .titleContainer {
+    display: flex;
+    height: 20%;
+    justify-content: center;
+  border-bottom: 1px solid black;
+    background-color: #FBD344;
+    align-items: center;  
+  }
+
+    .content {
+    display: flex;
+  flex-direction: column;
+  text-align: center;
+    padding: 10%;
+   }
+  
+  .content p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .preguntaList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .preguntaItem {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .nivel {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000
+  }
+  
+  .footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .logo {
+    height: 1em;
+    margin-left: 0.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .breadcrumb a:hover {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  

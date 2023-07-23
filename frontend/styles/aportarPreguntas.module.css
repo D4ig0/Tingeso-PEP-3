@@ -1,0 +1,65 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+  .filters {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .filterBtn {
+    cursor: pointer;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filterBtn.active {
+    background-color: #0070f3;
+    color: #ffffff;
+  }
+  
+  .preguntaList {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+    width: 100%;
+  }
+  
+  .preguntaItem {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .nivel {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
