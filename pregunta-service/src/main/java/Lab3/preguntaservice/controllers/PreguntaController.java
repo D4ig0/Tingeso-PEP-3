@@ -14,7 +14,7 @@ import java.util.List;
 @CrossOrigin
 public class PreguntaController {
 
-    
+
     @Autowired
     private PreguntaService preguntaService;
     @GetMapping

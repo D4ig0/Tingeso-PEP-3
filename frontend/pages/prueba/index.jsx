@@ -5,6 +5,8 @@ import Pregunta from "../../components/Pregunta";
 import Cronometro from "../../components/Cronometro"; // Importa el componente de Cronómetro aquí
 import Link from "next/link";
 import PreguntaService from "/services/PreguntaService";
+import PopUp from "../../components/Popup";
+import { useRouter } from 'next/router';
 
 const Prueba = () => {
   const [dificultad, setDificultad] = useState("");
@@ -12,7 +14,8 @@ const Prueba = () => {
   const [verificarRespuestas, setVerificarRespuestas] = useState(false);
   const [tiempoCronometro, setTiempoCronometro] = useState(null);
   const[verificador, setVerificador] = useState(false);
-  const tiempoGuardado = localStorage.getItem("tiempoCronometro");
+  const [showPopup, setShowPopup] = useState(false);
+  const router = useRouter();
 
 
   useEffect(() => {
@@ -33,6 +36,25 @@ const Prueba = () => {
         });
     }
   }, []);
+
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      if (!verificarRespuestas) {
+        setShowPopup(true);
+        router.events.emit('routeChangeError');
+        console.warn('Para abandonar la página, debe verificar las respuestas.');
+      }
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [verificarRespuestas]);
+
+
 
   const calcularPuntaje = () => {
     let puntajeTotal = 0;
@@ -71,15 +93,24 @@ const Prueba = () => {
          &gt; PRUEBA
       </nav>
 
-    <div className={styles.volver}>
-      
-    <button>
-          <Link href="/dificultad">Volver a dificultades</Link>
+      <div className={styles.volver}>
+        <button onClick={() => setShowPopup(true)}>
+          Volver a dificultades
         </button>
-        <button>
-          <Link href="/">Volver al inicio</Link>
+        <button onClick={() => setShowPopup(true)}>
+          Volver al inicio
         </button>
       </div>
+
+      <PopUp
+        isOpen={showPopup}
+        onRequestClose={() => setShowPopup(false)}
+        onConfirm={() => {
+          setShowPopup(false);
+          router.push('/'); 
+        }}
+      />
+
 
       
       <div className={styles.informacion}>
@@ -92,16 +123,10 @@ const Prueba = () => {
     </div>
   ) : (
     <>
-      {/* Mantenemos el cronómetro siempre montado, pero lo mostramos u ocultamos según la condición */}
-        
       <button className={styles.button} onClick={handleVerificarRespuestas}>Verificar respuestas</button>
     </>
   )}
 </div>
-
-
-      
-
         <p className={styles.title}>Prueba de dificultad {dificultad}</p>
 
         {preguntasEjemplo.map((pregunta, index) => (
