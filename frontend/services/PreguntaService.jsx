@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8080/preguntas';
+const url = 'http://localhost:8082/preguntas';
 
 class PreguntaService {
 
