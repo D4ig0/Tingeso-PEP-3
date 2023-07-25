@@ -1,4 +1,3 @@
-/* agregarPreguntas.module.css */
 
 .container{
   background-color: rgba(0,18,32,255);
@@ -35,7 +34,6 @@
   border-radius: 10px;
   
 }
-/* Estilos para el select */
 .dificultad select {
   background-color:rgba(0,18,32,255);
   font-size: 1rem;
@@ -46,7 +44,6 @@
 
 
 
-/* Estilos para cambiar la apariencia del select cuando está enfocado */
 .dificultad select:focus {
   border-color: #1e5ea7;
   box-shadow: 0 0 3px rgba(37, 40, 43, 0.5);
@@ -126,5 +123,47 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  gap: 10px; /* Añadimos un espacio vertical de 10px entre la etiqueta y el input */
+  gap: 10px;
+}
+.modalContent {
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modalTitle {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.modalMessage {
+  margin-bottom: 2em;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirmButton {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }

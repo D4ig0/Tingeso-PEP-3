@@ -126,6 +126,7 @@ const Prueba = () => {
       <button className={styles.button} onClick={handleVerificarRespuestas}>Verificar respuestas</button>
     </>
   )}
+  
 </div>
         <p className={styles.title}>Prueba de dificultad {dificultad}</p>
 
@@ -136,6 +137,7 @@ const Prueba = () => {
             codigo={pregunta.codigo}
             respuesta={pregunta.respuesta}
             respuestaUsuario={pregunta.respuestaUsuario}
+
             setRespuestaUsuario={(respuesta) => {
               const nuevasPreguntas = [...preguntasEjemplo];
               nuevasPreguntas[index].respuestaUsuario = respuesta;
@@ -143,6 +145,7 @@ const Prueba = () => {
             }}
             verificarRespuestas={verificarRespuestas} 
           />
+
         ))}
 
 
