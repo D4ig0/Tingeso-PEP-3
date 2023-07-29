@@ -29,6 +29,9 @@ const Dificultad = () => {
         <h1 className={styles.title}>Selecciona la dificultad de la prueba</h1>
 
       
+        <Link href="/">
+          <button className={styles.inicio}> Volver a inicio</button>
+        </Link>
 
         <div className={styles.filters}>
           <div className={styles.filterCard} onClick={() => handleSeleccionarDificultad('basica')}>

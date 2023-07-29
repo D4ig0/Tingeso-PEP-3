@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import styles from '../../styles/agregarPreguntas.module.css';
 import PreguntaService from "/services/PreguntaService";
+import Link from 'next/link';
+import Head from "next/head";
 
 const SubirPreguntas = () => {
   const [codigo, setCodigo] = useState('');
@@ -11,7 +13,7 @@ const SubirPreguntas = () => {
   const [alerta, setAlerta] = useState(false);
 
   const handleAlerta = () => {
-    setAlerta(false); 
+    setAlerta(false);
   };
 
   const onClickHandler = () => {
@@ -26,6 +28,7 @@ const SubirPreguntas = () => {
       window.alert('Solo se aceptan archivos .py');
       return;
     }
+
     PreguntaService.subirPregunta(codigo, dificultad, respuesta, enunciado)
       .then((response) => {
         console.log('Pregunta subida exitosamente:', response.data);
@@ -38,8 +41,23 @@ const SubirPreguntas = () => {
   }
 
   return (
+
+
     <div className={styles.container}>
+      <Head>
+        <title>Prueba</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+    
+
+
       <div className={styles.formulario}>
+      <nav className={styles.breadcrumb}>
+        <Link href="/">INICIO</Link> &gt;
+        <Link href="/biblioteca">DIFICULTAD</Link>
+        &gt; AGREGAR
+      </nav>
         <div className={styles.titulo}>
           Crea tu pregunta
         </div>
@@ -73,13 +91,16 @@ const SubirPreguntas = () => {
         <button type="button" className={styles.animatedButton} onClick={onClickHandler}>
           Crear Pregunta
         </button>
+
+        <Link href="/biblioteca">
+          <button className={styles.inicio}> Volver a biblioteca</button>
+        </Link>
         <Modal
           isOpen={alerta}
           onRequestClose={handleAlerta}
           className={styles.modalContent}
           overlayClassName={styles.modalOverlay}
-          contentLabel="Subir Pregunta"
-        >
+          contentLabel="Subir Pregunta">
           <h2 className={styles.modalTitle}>Pregunta subida exitosamente</h2>
           <p className={styles.modalMessage}>Tu pregunta se ha subido correctamente y está lista para ser utilizada.</p>
           <div className={styles.modalButtons}>

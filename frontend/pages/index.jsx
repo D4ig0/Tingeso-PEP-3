@@ -25,9 +25,10 @@ export default function Home() {
           </a>
 
           <a href="/biblioteca" className={styles.card}>
-            <h2>Biblioteca &rarr;</h2>
+            <h2>Estudiar &rarr;</h2>
             <p></p>
           </a>
+          
 
         </div>
       </main>

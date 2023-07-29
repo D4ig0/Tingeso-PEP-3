@@ -50,6 +50,10 @@ const Biblioteca = () => {
       <Link href="/agregarPreguntas">
           <button className={styles.agregar}>Agregar Pregunta</button>
         </Link>
+        <Link href="/">
+          <button className={styles.inicio }>Volver a inicio</button>
+        </Link>
+
       <main className={styles.main}>
         
         <h1 className={styles.title}>Biblioteca de preguntas</h1>

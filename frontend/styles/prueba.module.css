@@ -14,7 +14,7 @@
   .volver {
     position: fixed;
     top: 70%;
-    left: 10%;
+    left: 5%;
     
     color: white;
     border-radius: 5px;
@@ -46,6 +46,12 @@
     min-width: 15rem;
     cursor:grab;
   }
+
+.volver button:hover{
+  color: #424446;
+  text-decoration: none;
+}
+
   .resultado{
     display: flex;
     border-radius: 8px;
@@ -57,9 +63,10 @@
   }
 
 
+
   .informacion {
     position: fixed;
-    top: 40%;
+    top: 35%;
     left: 80%;
     max-width: 12rem;
     color: white;
@@ -81,6 +88,12 @@
     min-width: 15rem;
     cursor:grab;
 }
+
+.informacion   button:hover{
+  color: #424446;
+  text-decoration: none;
+}
+
 
 
 .breadcrumb {

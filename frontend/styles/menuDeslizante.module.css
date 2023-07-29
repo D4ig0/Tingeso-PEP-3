@@ -1,0 +1,43 @@
+.menuContainer {
+    position: relative;
+  }
+  
+  .toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Eliminar el contorno */
+  }
+  
+  
+  .menu {
+    position: absolute;
+    top: 2.6rem;
+    right: 0;
+    width: 7rem;
+    background-color: rgba(0,18,32,255);
+    border: 1px solid #ccc;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0%);
+    list-style: none;
+    text-align: right;
+  }
+  
+  .open {
+    transform: translateX(0);
+  }
+  
+.imagen {
+    filter: brightness(0) invert(1) grayscale(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .imagen:hover {
+    transform: scale(1.2);
+    filter: brightness(0) invert(1) grayscale(0);
+  }
+  

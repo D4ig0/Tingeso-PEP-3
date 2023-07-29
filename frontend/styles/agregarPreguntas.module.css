@@ -41,6 +41,25 @@
   cursor: pointer;
 }
 
+.inicio{  position: fixed;
+  top:80%;
+  left: 5%;
+
+  background-color: #1e5ea7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 4rem;
+  font-size: 1.5rem;
+  min-width: 15rem;
+  cursor:grab;
+}
+
+
+.inicio:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
 
 
 
@@ -112,11 +131,12 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+
 }
 
 .animatedButton:hover {
   background-color: #0056b3;
+  transition: background-color 0.3s;
 }
 .ingresa {
   font-size: 1.2rem;
@@ -166,4 +186,12 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+.breadcrumb {
+  font-size: 1rem;
+}
+
+.breadcrumb a:hover {
+  color: #0070f3;
+  text-decoration: none;
 }

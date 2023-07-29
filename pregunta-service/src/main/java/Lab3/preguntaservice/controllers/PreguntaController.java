@@ -27,7 +27,7 @@ public class PreguntaController {
                                            @RequestParam("dificultad") String dificultad,
                                            @RequestParam("respuesta") String respuesta,
                                             @RequestParam("enunciado") String enunciado) {
-        System.out.println("HOLA TOY PROBANDO PE CAISA");
+
         preguntaService.guardarPregunta(codigo, dificultad, respuesta, enunciado);
         return ResponseEntity.ok().build();}
 

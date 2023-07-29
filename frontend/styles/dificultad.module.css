@@ -35,7 +35,19 @@
     margin-top: 20px;
     height: 350px;
   }
-  
+  .inicio{  position: fixed;
+    top:80%;
+    left: 5%;
+
+    background-color: #1e5ea7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 4rem;
+    font-size: 1.5rem;
+    min-width: 15rem;
+    cursor:grab;
+  }
   .filterCard {
     border: 2px solid black;
     margin: 10px;
